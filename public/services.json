@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Wildlife Explorer Photography",
+    "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+    "rating": 4.8,
+    "price": 3,
+    "description": "Capture the essence of nature's beauty with our expert wildlife photography service.",
+    "related": ["nature", "adventure", "animals", "outdoor"],
+    "location": "Various wilderness locations worldwide",
+    "duration": "Full-day or multi-day expeditions",
+    "equipment": ["Professional DSLR camera", "Telephoto lens", "Tripod"],
+    "guide": "Experienced wildlife photographer and guide",
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"]
+  },
+  {
+    "name": "Safari Wilderness Photography",
+    "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+    "rating": 4.5,
+    "price": 2,
+    "description": "Embark on an unforgettable journey through the wild and capture stunning shots of wildlife in their natural habitat.",
+    "related": ["adventure", "animals", "landscape", "travel"],
+    "location": "Safari parks and reserves in Africa",
+    "duration": "Multi-day safari tours",
+    "equipment": ["Professional camera", "Zoom lens", "Binoculars"],
+    "guide": "Local safari guide and photography expert",
+    "included": ["Accommodation", "Meals", "Safari drives"],
+    "notIncluded": ["Flights", "Tips"]
+  },
+  {
+    "name": "Bird Watching Photography",
+    "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+    "rating": 4.9,
+    "price": 2,
+    "description": "Immerse yourself in the world of birds and capture stunning images of various avian species.",
+    "related": ["birds", "nature", "outdoor", "photography"],
+    "location": "Various birdwatching hotspots worldwide",
+    "duration": "Half-day to full-day excursions",
+    "equipment": ["Telephoto lens", "Binoculars", "Field guide"],
+    "guide": "Professional birding guide and photographer",
+    "included": ["Transportation", "Guide services"],
+    "notIncluded": ["Meals", "Equipment rental"]
+  },
+  {
+    "name": "Mountain Landscape Photography",
+    "image": "https://i.postimg.cc/s2P4GcBD/4.jpg",
+    "rating": 4.7,
+    "price": 3,
+    "description": "Capture the majestic beauty of mountain landscapes with our expert photography service.",
+
+    "related": ["nature", "landscape", "adventure", "outdoor"],
+
+    "location": "Mountain ranges worldwide",
+    "duration": "Full-day or multi-day expeditions",
+
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+
+    "guide": "Experienced landscape photographer and guide",
+
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"]
+  },
+  {
+    "name": "Underwater Photography",
+    "image": "https://i.postimg.cc/wBzhzmWK/5.jpg",
+    "rating": 4.6,
+    "price": 3,
+    "description": "Explore the underwater world and capture breathtaking images of marine life.",
+    "related": ["nature", "underwater", "adventure", "photography"],
+    "location": "Various diving locations worldwide",
+    "duration": "Dive trips and excursions",
+    "equipment": [
+      "Underwater camera",
+      "Underwater housing",
+      "Underwater lights"
+    ],
+    "guide": "Certified diving instructor and underwater photographer",
+    "included": ["Diving equipment", "Guide services"],
+    "notIncluded": ["Transportation", "Meals"]
+  },
+  {
+    "name": "Jungle Photography Expedition",
+    "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+    "rating": 4.8,
+    "price": 3,
+    "description": "Venture into the heart of the jungle and capture the wonders of the rainforest.",
+    "related": ["nature", "jungle", "adventure", "wildlife"],
+    "location": "Rainforests in South America and Southeast Asia",
+    "duration": "Multi-day jungle treks",
+    "equipment": ["Professional camera", "Zoom lens", "Tripod"],
+    "guide": "Local jungle guide and wildlife expert",
+    "included": ["Accommodation", "Meals", "Guide services"],
+    "notIncluded": ["Flights", "Personal expenses"]
+  },
+
+  {
+    "name": "Polar Wildlife Photography",
+    "image": "https://i.postimg.cc/x1DmGmVk/7.jpg",
+    "rating": 4.9,
+    "price": 3,
+    "description": "Experience the beauty of the polar regions and capture stunning images of Arctic and Antarctic wildlife.",
+    "related": ["nature", "wildlife", "adventure", "polar"],
+    "location": "Arctic and Antarctic regions",
+    "duration": "Expeditions and cruises",
+    "equipment": [
+      "Professional DSLR camera",
+      "Telephoto lens",
+      "Cold weather gear"
+    ],
+    "guide": "Experienced polar photographer and expedition leader",
+    "included": ["Accommodation", "Meals", "Expedition activities"],
+    "notIncluded": ["Flights", "Personal expenses"]
+  },
+  {
+    "name": "Desert Landscape Photography",
+    "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+    "rating": 4.7,
+    "price": 2,
+    "description": "Capture the vast beauty of desert landscapes with our expert photography service.",
+    "related": ["nature", "landscape", "adventure", "outdoor"],
+    "location": "Deserts worldwide",
+    "duration": "Full-day or multi-day expeditions",
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+    "guide": "Experienced landscape photographer and guide",
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"]
+  },
+  {
+    "name": "Aerial Photography",
+    "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+    "rating": 4.6,
+    "price": 3,
+    "description": "Capture stunning aerial views of landscapes, cities, and landmarks from above.",
+    "related": ["nature", "landscape", "adventure", "photography"],
+    "location": "Various locations worldwide",
+    "duration": "Aerial photography flights",
+    "equipment": ["Professional camera", "Drone", "Gimbal stabilizer"],
+    "guide": "Certified drone pilot and aerial photographer",
+    "included": ["Aerial flights", "Equipment rental", "Guide services"],
+    "notIncluded": ["Transportation", "Meals"]
+  },
+  {
+    "name": "Volcano Photography",
+    "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+    "rating": 4.8,
+    "price": 3,
+    "description": "Witness the raw power of volcanoes and capture breathtaking images of volcanic landscapes.",
+    "related": ["nature", "landscape", "adventure", "outdoor"],
+    "location": "Volcanic regions worldwide",
+    "duration": "Full-day or multi-day expeditions",
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+    "guide": "Experienced landscape photographer and guide",
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"]
+  },
+  {
+    "name": "Sunset Photography Tours",
+    "image": "https://i.postimg.cc/s2P4GcBD/4.jpg",
+    "rating": 4.5,
+    "price": 2,
+    "description": "Capture the stunning beauty of sunset scenes with our guided photography tours.",
+    "related": ["nature", "landscape", "sunset", "photography"],
+    "location": "Various scenic locations worldwide",
+    "duration": "Evening sunset photography sessions",
+    "equipment": ["Professional camera", "Tripod", "ND filters"],
+    "guide": "Experienced landscape photographer",
+    "included": ["Guided tours", "Photography tips"],
+    "notIncluded": ["Transportation", "Meals"]
+  },
+  {
+    "name": "Northern Lights Photography",
+    "image": "https://i.postimg.cc/wBzhzmWK/5.jpg",
+    "rating": 4.9,
+    "price": 3,
+    "description": "Capture the mesmerizing beauty of the Aurora Borealis with our specialized photography tours.",
+    "related": ["nature", "landscape", "aurora", "photography"],
+    "location": "Arctic regions",
+    "duration": "Nighttime photography excursions",
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+    "guide": "Experienced northern lights photographer",
+    "included": ["Transportation", "Photography guidance"],
+    "notIncluded": ["Accommodation", "Meals"]
+  },
+  {
+    "name": "Glacier Photography Expeditions",
+    "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+    "rating": 4.8,
+    "price": 3,
+    "description": "Capture the breathtaking beauty of glaciers with our expert photography expeditions.",
+    "related": ["nature", "landscape", "glacier", "photography"],
+    "location": "Glacier regions worldwide",
+    "duration": "Multi-day expeditions",
+    "equipment": ["Professional camera", "Telephoto lens", "Cold weather gear"],
+    "guide": "Experienced glacier photographer and guide",
+    "included": ["Accommodation", "Meals", "Photography workshops"],
+    "notIncluded": ["Flights", "Personal expenses"]
+  }
+]
