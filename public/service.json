@@ -1,0 +1,319 @@
+[
+  {
+    "name": "Wildlife Explorer Photography",
+    "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+    "rating": 4.8,
+    "price": 3,
+    "description": "Capture the essence of nature's beauty with our expert wildlife photography service.",
+    "related": ["nature", "adventure", "animals", "outdoor"],
+    "location": "Various wilderness locations worldwide",
+    "duration": "Full-day or multi-day expeditions",
+    "equipment": ["Professional DSLR camera", "Telephoto lens", "Tripod"],
+    "guide": "Experienced wildlife photographer and guide",
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"],
+    "reviews": [
+      {
+        "text": "Absolutely amazing experience! The guide was incredibly knowledgeable and helped us capture some stunning wildlife shots. Highly recommend!",
+        "name": "Linda Thompson",
+        "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+        "rating": 5
+      },
+      {
+        "text": "Had a fantastic time on the wildlife photography tour. The guide was friendly and patient, and I learned a lot about wildlife photography techniques.",
+        "name": "Michael Johnson",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.5
+      }
+    ]
+  },
+  {
+    "name": "Safari Wilderness Photography",
+    "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+    "rating": 4.5,
+    "price": 2,
+    "description": "Embark on an unforgettable journey through the wild and capture stunning shots of wildlife in their natural habitat.",
+    "related": ["adventure", "animals", "landscape", "travel"],
+    "location": "Safari parks and reserves in Africa",
+    "duration": "Multi-day safari tours",
+    "equipment": ["Professional camera", "Zoom lens", "Binoculars"],
+    "guide": "Local safari guide and photography expert",
+    "included": ["Accommodation", "Meals", "Safari drives"],
+    "notIncluded": ["Flights", "Tips"],
+    "reviews": [
+      {
+        "text": "The safari photography tour exceeded my expectations. The guide was phenomenal and ensured we had the best wildlife photography experience.",
+        "name": "Sarah Anderson",
+        "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+        "rating": 5
+      },
+      {
+        "text": "An unforgettable safari photography adventure! The guide's knowledge of the wildlife and photography techniques made the trip truly special.",
+        "name": "Robert Smith",
+        "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "name": "Bird Watching Photography",
+    "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+    "rating": 4.9,
+    "price": 2,
+    "description": "Immerse yourself in the world of birds and capture stunning images of various avian species.",
+    "related": ["birds", "nature", "outdoor", "photography"],
+    "location": "Various birdwatching hotspots worldwide",
+    "duration": "Half-day to full-day excursions",
+    "equipment": ["Telephoto lens", "Binoculars", "Field guide"],
+    "guide": "Professional birding guide and photographer",
+    "included": ["Transportation", "Guide services"],
+    "notIncluded": ["Meals", "Equipment rental"],
+    "reviews": [
+      {
+        "text": "A wonderful birdwatching experience! The guide was knowledgeable and helped us spot rare bird species for photography.",
+        "name": "Jennifer Brown",
+        "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+        "rating": 4.7
+      },
+      {
+        "text": "Had an amazing time photographing birds in their natural habitat. The guide's expertise was invaluable!",
+        "name": "David Wilson",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.9
+      }
+    ]
+  },
+  {
+    "name": "Mountain Landscape Photography",
+    "image": "https://i.postimg.cc/s2P4GcBD/4.jpg",
+    "rating": 4.7,
+    "price": 3,
+    "description": "Capture the majestic beauty of mountain landscapes with our expert photography service.",
+    "related": ["nature", "landscape", "adventure", "outdoor"],
+    "location": "Mountain ranges worldwide",
+    "duration": "Full-day or multi-day expeditions",
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+    "guide": "Experienced landscape photographer and guide",
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"],
+    "reviews": [
+      {
+        "text": "An unforgettable experience capturing stunning mountain landscapes! The guide was knowledgeable and helpful throughout the expedition.",
+        "name": "Rachel Adams",
+        "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+        "rating": 4.8
+      },
+      {
+        "text": "Highly recommend this mountain photography tour! The guide's expertise made it a memorable experience.",
+        "name": "Daniel Clark",
+        "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+        "rating": 4.9
+      }
+    ]
+  },
+  {
+    "name": "Underwater Photography",
+    "image": "https://i.postimg.cc/wBzhzmWK/5.jpg",
+    "rating": 4.6,
+    "price": 3,
+    "description": "Explore the underwater world and capture breathtaking images of marine life.",
+    "related": ["nature", "underwater", "adventure", "photography"],
+    "location": "Various diving locations worldwide",
+    "duration": "Dive trips and excursions",
+    "equipment": [
+      "Underwater camera",
+      "Underwater housing",
+      "Underwater lights"
+    ],
+    "guide": "Certified diving instructor and underwater photographer",
+    "included": ["Diving equipment", "Guide services"],
+    "notIncluded": ["Transportation", "Meals"],
+    "reviews": [
+      {
+        "text": "Incredible experience exploring the underwater world and capturing stunning images! The instructor was very knowledgeable and ensured our safety throughout.",
+        "name": "Jessica Evans",
+        "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+        "rating": 4.9
+      },
+      {
+        "text": "The underwater photography excursion was fantastic! The guide's expertise and passion for marine life made it an unforgettable experience.",
+        "name": "David Martinez",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.7
+      }
+    ]
+  },
+
+  {
+    "name": "Sunset Photography Tours",
+    "image": "https://i.postimg.cc/s2P4GcBD/4.jpg",
+    "rating": 4.5,
+    "price": 2,
+    "description": "Capture the stunning beauty of sunset scenes with our guided photography tours.",
+    "related": ["nature", "landscape", "sunset", "photography"],
+    "location": "Various scenic locations worldwide",
+    "duration": "Evening sunset photography sessions",
+    "equipment": ["Professional camera", "Tripod", "ND filters"],
+    "guide": "Experienced landscape photographer",
+    "included": ["Guided tours", "Photography tips"],
+    "notIncluded": ["Transportation", "Meals"],
+    "reviews": [
+      {
+        "text": "The sunset photography tour was breathtaking! The guide was very helpful in teaching us how to capture the perfect sunset shot.",
+        "name": "Emily Cooper",
+        "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+        "rating": 4.7
+      },
+      {
+        "text": "Had an amazing time capturing the sunset scenes! The guide's tips and tricks were incredibly valuable.",
+        "name": "John Doe",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "name": "Northern Lights Photography",
+    "image": "https://i.postimg.cc/wBzhzmWK/5.jpg",
+    "rating": 4.9,
+    "price": 3,
+    "description": "Capture the mesmerizing beauty of the Aurora Borealis with our specialized photography tours.",
+    "related": ["nature", "landscape", "aurora", "photography"],
+    "location": "Arctic regions",
+    "duration": "Nighttime photography excursions",
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+    "guide": "Experienced northern lights photographer",
+    "included": ["Transportation", "Photography guidance"],
+    "notIncluded": ["Accommodation", "Meals"],
+    "reviews": [
+      {
+        "text": "Absolutely breathtaking experience capturing the Northern Lights! The guide was knowledgeable and helped us set up our equipment for the best shots.",
+        "name": "Sophia Williams",
+        "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+        "rating": 5
+      },
+      {
+        "text": "An unforgettable night capturing the Aurora Borealis! The guide's expertise and patience made it a memorable experience.",
+        "name": "Robert Johnson",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "name": "Glacier Photography Expeditions",
+    "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+    "rating": 4.8,
+    "price": 3,
+    "description": "Capture the breathtaking beauty of glaciers with our expert photography expeditions.",
+    "related": ["nature", "landscape", "glacier", "photography"],
+    "location": "Glacier regions worldwide",
+    "duration": "Multi-day expeditions",
+    "equipment": ["Professional camera", "Telephoto lens", "Cold weather gear"],
+    "guide": "Experienced glacier photographer and guide",
+    "included": ["Accommodation", "Meals", "Photography workshops"],
+    "notIncluded": ["Flights", "Personal expenses"],
+    "reviews": [
+      {
+        "text": "Had an incredible time capturing the beauty of glaciers! The guide's expertise and passion for photography were truly inspiring.",
+        "name": "Jennifer Lee",
+        "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+        "rating": 4.9
+      },
+      {
+        "text": "A once-in-a-lifetime experience! The glacier photography expedition was well-organized, and the guide made sure we got some amazing shots.",
+        "name": "Michael Brown",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.7
+      }
+    ]
+  },
+  {
+    "name": "Polar Wildlife Photography",
+    "image": "https://i.postimg.cc/x1DmGmVk/7.jpg",
+    "rating": 4.9,
+    "price": 3,
+    "description": "Experience the beauty of the polar regions and capture stunning images of Arctic and Antarctic wildlife.",
+    "related": ["nature", "wildlife", "adventure", "polar"],
+    "location": "Arctic and Antarctic regions",
+    "duration": "Expeditions and cruises",
+    "equipment": [
+      "Professional DSLR camera",
+      "Telephoto lens",
+      "Cold weather gear"
+    ],
+    "guide": "Experienced polar photographer and expedition leader",
+    "included": ["Accommodation", "Meals", "Expedition activities"],
+    "notIncluded": ["Flights", "Personal expenses"],
+    "reviews": [
+      {
+        "text": "An extraordinary experience capturing polar wildlife! The expedition leader's knowledge and enthusiasm made it an unforgettable journey.",
+        "name": "Emma Johnson",
+        "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+        "rating": 5
+      },
+      {
+        "text": "Absolutely amazing! The wildlife photography expedition was well-organized, and we got to see some incredible wildlife up close.",
+        "name": "Alex Smith",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "name": "Aerial Photography",
+    "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+    "rating": 4.6,
+    "price": 3,
+    "description": "Capture stunning aerial views of landscapes, cities, and landmarks from above.",
+    "related": ["nature", "landscape", "adventure", "photography"],
+    "location": "Various locations worldwide",
+    "duration": "Aerial photography flights",
+    "equipment": ["Professional camera", "Drone", "Gimbal stabilizer"],
+    "guide": "Certified drone pilot and aerial photographer",
+    "included": ["Aerial flights", "Equipment rental", "Guide services"],
+    "notIncluded": ["Transportation", "Meals"],
+    "reviews": [
+      {
+        "text": "The aerial photography tour was an exhilarating experience! The views from above were breathtaking, and the pilot ensured we got the best shots.",
+        "name": "Emily White",
+        "image": "https://i.postimg.cc/vHjzJDFM/3.jpg",
+        "rating": 4.8
+      },
+      {
+        "text": "Had a fantastic time capturing aerial views of the city skyline! The pilot's expertise and professionalism were commendable.",
+        "name": "Michael Johnson",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.5
+      }
+    ]
+  },
+  {
+    "name": "Desert Landscape Photography",
+    "image": "https://i.postimg.cc/k5Sh1KBk/1.jpg",
+    "rating": 4.7,
+    "price": 2,
+    "description": "Capture the vast beauty of desert landscapes with our expert photography service.",
+    "related": ["nature", "landscape", "adventure", "outdoor"],
+    "location": "Deserts worldwide",
+    "duration": "Full-day or multi-day expeditions",
+    "equipment": ["Professional camera", "Wide-angle lens", "Tripod"],
+    "guide": "Experienced landscape photographer and guide",
+    "included": ["Transportation", "Meals", "Expert guidance"],
+    "notIncluded": ["Personal expenses", "Optional equipment rental"],
+    "reviews": [
+      {
+        "text": "The desert photography expedition was amazing! The guide's knowledge of the desert terrain and photography techniques was impressive.",
+        "name": "Sophia Martinez",
+        "image": "https://i.postimg.cc/mD2CzGf8/6.jpg",
+        "rating": 4.9
+      },
+      {
+        "text": "An unforgettable experience capturing the beauty of desert landscapes! The guide's passion for photography and the desert environment was evident throughout the expedition.",
+        "name": "Daniel Smith",
+        "image": "https://i.postimg.cc/SQd1vyxN/2.jpg",
+        "rating": 4.7
+      }
+    ]
+  }
+]

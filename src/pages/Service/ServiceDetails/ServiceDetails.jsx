@@ -1,12 +1,16 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import "@smastrom/react-rating/style.css";
+import { Rating } from "@smastrom/react-rating";
+import AddReview from "../AddReview/AddReview";
 
 const ServiceDetails = () => {
   const services = useLoaderData();
-  const { name, image, rating, price, description, _id } = services;
+  const { name, image, rating, price, description, reviews } = services;
+
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center">
+    <div className="">
+      <div className=" flex flex-col justify-center items-center">
         <h2 className="text-4xl font-bold my-12 border-b-2 border-black pb-2">
           Rervice section
         </h2>
@@ -42,10 +46,45 @@ const ServiceDetails = () => {
           </div>
         </div>
       </div>
-      <div>
-        <h2 className="text-4xl font-bold my-12 border-b-2 border-black pb-2">
+      <div className="w-8/12 mx-auto">
+        <h2 className="text-4xl font-bold my-12 border-b-2 text-center border-black pb-2">
           Review section
         </h2>
+
+        {/* review section  */}
+
+        <div className="">
+          {reviews.map((review, inx) => (
+            <div key={inx} className="my-10 bg-slate-600 text-slate-300 p-8">
+              <div className="flex gap-x-5 items-center">
+                <img
+                  src={review.image}
+                  alt=""
+                  className="w-12 h-12 rounded-full"
+                />
+                <div>
+                  <Rating
+                    style={{ maxWidth: 100 }}
+                    value={review.rating}
+                    readOnly
+                  />
+                  <h3 className="text-xl font-bold">{review.name}</h3>
+                </div>
+              </div>
+              <div>
+                <p>{review.text}</p>
+              </div>
+            </div>
+          ))}
+
+          <div className="my-4">
+            <Link to="/addReview" className="btn btn-neutral">
+              Add your review
+            </Link>
+
+            {/* <AddReview></AddReview> */}
+          </div>
+        </div>
       </div>
     </div>
   );

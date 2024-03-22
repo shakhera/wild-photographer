@@ -2,6 +2,8 @@ import React from "react";
 import { PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
+import "@smastrom/react-rating/style.css";
+import { Rating } from "@smastrom/react-rating";
 
 const ServiceCard = ({ service }) => {
   const { name, image, rating, price, description, _id } = service;
@@ -14,7 +16,7 @@ const ServiceCard = ({ service }) => {
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <p>Price: ${price}</p>
-          <p>Rating: {rating}</p>
+          <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
           <p> {description}</p>
           <div className="card-actions justify-end">
             <Link
