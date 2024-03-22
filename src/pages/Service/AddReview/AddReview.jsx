@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const AddReview = () => {
   return (
     <div>
+      <Helmet>
+        <title>Review | Wild Photographer</title>
+      </Helmet>
       <div className=" mt-6 mb-12 ">
         <div className="card shrink-0 w-10/12 md:w-7/12 mx-auto  shadow-2xl bg-base-100">
           <form className="card-body bg-base-200">
@@ -68,6 +72,7 @@ const AddReview = () => {
                 required
               />
             </div>
+
             <div className="form-control mt-6">
               <button className="btn btn-neutral">Add review</button>
             </div>

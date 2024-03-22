@@ -1,7 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
 
@@ -16,6 +19,56 @@ const Navbar = () => {
       document.removeEventListener("mousedown", closeDropDown);
     };
   }, []);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const menuItems = (
+    <>
+      <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+        <Link to="/">Home</Link>
+        <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+      </li>
+      <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+        <Link to="/services">Services</Link>
+      </li>
+      <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+        <Link to="/">About</Link>
+      </li>
+      <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+        <Link to="/">Contact</Link>
+      </li>
+      <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+        <Link to="/blog">Blog</Link>
+      </li>
+
+      {user ? (
+        <>
+          <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+            <Link to="/myReview">My Review</Link>
+          </li>
+          <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+            <Link to="/addService">Add Service</Link>
+          </li>
+          <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+            <button onClick={handleLogOut}>SignOut</button>
+          </li>
+        </>
+      ) : (
+        <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
+          <Link to="/signin">Signin</Link>
+        </li>
+      )}
+    </>
+  );
+
   return (
     <div>
       <nav className="flex items-center justify-between bg-[#393E46] px-4 py-2 text-white ">
@@ -23,22 +76,7 @@ const Navbar = () => {
           <h2 className="font-serif">WildPhotographer</h2>
         </div>
         <ul className="hidden items-center justify-between gap-10 md:flex">
-          <li className="group flex  cursor-pointer flex-col">
-            <Link to="/">Home</Link>
-            <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="group flex  cursor-pointer flex-col">
-            <Link to="/services">Services</Link>
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="group flex  cursor-pointer flex-col">
-            <Link to="/">About</Link>
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="group flex  cursor-pointer flex-col">
-            <Link to="/">Contact</Link>
-            <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-          </li>
+          {menuItems}
         </ul>
         <div
           ref={dropDownMenuRef}
@@ -64,18 +102,7 @@ const Navbar = () => {
           </svg>
           {dropDownState && (
             <ul className=" z-10  gap-2  bg-[#393E46]  absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
-              <li className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
-                Home
-              </li>
-              <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                Services
-              </li>
-              <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                About
-              </li>
-              <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                Contact
-              </li>
+              {menuItems}
             </ul>
           )}
         </div>

@@ -12,10 +12,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
+import { Helmet } from "react-helmet-async";
 
 const Banner = () => {
   return (
     <div>
+      <Helmet>
+        <title>Home | Wild Photographer</title>
+      </Helmet>
       <Swiper
         pagination={{
           type: "progressbar",
