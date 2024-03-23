@@ -6,7 +6,7 @@ import AddReview from "../AddReview/AddReview";
 
 const ServiceDetails = () => {
   const services = useLoaderData();
-  const { name, image, rating, price, description, reviews } = services;
+  const { name, image, rating, price, description, reviews, _id } = services;
 
   return (
     <div className="">
@@ -35,13 +35,13 @@ const ServiceDetails = () => {
               <b>Expeditions:</b> {services.guide}
             </p>
             <p>
-              <b>Other services:</b> {services.related.join(", ")}
+              <b>Other services:</b> {services.related?.join(", ")}
             </p>
             <p>
-              <b>Equipments:</b> {services.equipment.join(", ")}
+              <b>Equipments:</b> {services.equipment?.join(", ")}
             </p>
             <p>
-              <b>Service package:</b> {services.included.join(", ")}
+              <b>Service package:</b> {services.included?.join(", ")}
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ const ServiceDetails = () => {
         {/* review section  */}
 
         <div className="">
-          {reviews.map((review, inx) => (
+          {reviews?.map((review, inx) => (
             <div key={inx} className="my-10 bg-slate-600 text-slate-300 p-8">
               <div className="flex gap-x-5 items-center">
                 <img
@@ -78,11 +78,9 @@ const ServiceDetails = () => {
           ))}
 
           <div className="my-4">
-            <Link to="/addReview" className="btn btn-neutral">
+            <Link to={`/addReview/${_id}`} className="btn btn-neutral">
               Add your review
             </Link>
-
-            {/* <AddReview></AddReview> */}
           </div>
         </div>
       </div>

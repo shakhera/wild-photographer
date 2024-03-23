@@ -7,14 +7,14 @@ const PrivateRoute = ({ children }) => {
 
   const location = useLocation();
 
-  if (user) {
+  if (loading) {
+    return (
+      <div className="w-10 h-10 animate-[spin_1s_linear_infinite] rounded-full border-4 border-r-transparent border-l-transparent border-sky-400"></div>
+    );
+  }
+  if (user?.email) {
     return children;
   }
-  // if (loading) {
-  //   return (
-  //     <div className="w-10 h-10 animate-[spin_1s_linear_infinite] rounded-full border-4 border-r-transparent border-l-transparent border-sky-400"></div>
-  //   );
-  // }
 
   return <Navigate to="/signin" state={{ from: location }} replace></Navigate>;
 };

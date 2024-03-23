@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { AuthContext } from "../../../provider/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
@@ -20,9 +20,30 @@ const Signin = () => {
 
     login(email, password)
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
+        const user = result.user;
+        // console.log(user);
+        const currentUser = {
+          email: user.email,
+        };
+        console.log(currentUser);
+
+        // get jwt token
+        fetch("http://localhost:3000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+
+            //store token in localstorage
+            localStorage.setItem("wild-photographer-access-token", data.token);
+          });
         navigate(from, { replace: true });
+        // from.reset();
       })
       .catch((error) => {
         console.log(error);

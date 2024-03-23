@@ -22,8 +22,8 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        localStorage.removeItem("wild-photographer-access-token");
       })
       .catch((error) => {
         console.log(error);
@@ -39,9 +39,7 @@ const Navbar = () => {
       <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
         <Link to="/services">Services</Link>
       </li>
-      <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
-        <Link to="/">About</Link>
-      </li>
+
       <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
         <Link to="/">Contact</Link>
       </li>
