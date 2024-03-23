@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../provider/AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const MyReview = () => {
   const [reviews, setReviews] = useState([]);
@@ -23,23 +24,7 @@ const MyReview = () => {
         // console.log("reviews", data);
       });
   }, []);
-  const handleEdit = (id) => {
-    // update reviews
-    fetch(`http://localhost:3000/reviews/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -105,12 +90,12 @@ const MyReview = () => {
                     />
                   </td>
                   <td className="py-4 px-6 border-b">
-                    <button
-                      onClick={() => handleEdit(review._id)}
+                    <Link
+                      to={`/updateReview/${review._id}`}
                       className="btn btn-outline"
                     >
                       <FaEdit></FaEdit>
-                    </button>
+                    </Link>
                   </td>
                   <td className="py-4 px-6 border-b text-end">
                     <button

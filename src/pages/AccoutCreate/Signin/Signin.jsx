@@ -43,7 +43,7 @@ const Signin = () => {
             localStorage.setItem("wild-photographer-access-token", data.token);
           });
         navigate(from, { replace: true });
-        // from.reset();
+        from.reset();
       })
       .catch((error) => {
         console.log(error);
