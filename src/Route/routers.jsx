@@ -24,13 +24,18 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:3000/services?limit=-1"),
+        loader: () =>
+          fetch(
+            "https://wild-photographer-server-shakheras-projects.vercel.app/services?limit=-1"
+          ),
       },
       {
         path: "serviceDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id}`),
+          fetch(
+            `https://wild-photographer-server-shakheras-projects.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "addReview/:id",
@@ -40,7 +45,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id}`),
+          fetch(
+            `https://wild-photographer-server-shakheras-projects.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "myReview",
@@ -58,7 +65,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/reviews/${params.id}`),
+          fetch(
+            `https://wild-photographer-server-shakheras-projects.vercel.app/reviews/${params.id}`
+          ),
       },
       {
         path: "addService",

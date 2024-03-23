@@ -9,15 +9,18 @@ const MyReview = () => {
   const [reviews, setReviews] = useState([]);
   const { user } = useContext(AuthContext);
 
-  // const url = `http://localhost:3000/reviews?email=${user?.email}`;
+  // const url = `https://wild-photographer-server-shakheras-projects.vercel.app/reviews?email=${user?.email}`;
   useEffect(() => {
-    fetch(`http://localhost:3000/reviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem(
-          "wild-photographer-access-token"
-        )}`,
-      },
-    })
+    fetch(
+      `https://wild-photographer-server-shakheras-projects.vercel.app/reviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem(
+            "wild-photographer-access-token"
+          )}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -36,9 +39,12 @@ const MyReview = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/reviews/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://wild-photographer-server-shakheras-projects.vercel.app/reviews/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             // console.log(data);

@@ -15,13 +15,16 @@ const UpdateReview = () => {
     const updatedReview = { name, rating, message };
     console.log("update review", updatedReview);
 
-    fetch(`http://localhost:3000/reviews/${reviews._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedReview),
-    })
+    fetch(
+      `https://wild-photographer-server-shakheras-projects.vercel.app/reviews/${reviews._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedReview),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

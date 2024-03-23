@@ -6,7 +6,9 @@ const ServiceHome = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/services?limit=3")
+    fetch(
+      "https://wild-photographer-server-shakheras-projects.vercel.app/services?limit=3"
+    )
       .then((res) => res.json())
       .then((data) => {
         setServices(data.services);

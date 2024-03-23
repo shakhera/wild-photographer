@@ -28,13 +28,16 @@ const Signin = () => {
         console.log(currentUser);
 
         // get jwt token
-        fetch("http://localhost:3000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
+        fetch(
+          "https://wild-photographer-server-shakheras-projects.vercel.app/jwt",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(currentUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

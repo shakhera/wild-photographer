@@ -12,13 +12,16 @@ const AddService = () => {
   const onSubmit = (data) => {
     // console.log(data);
 
-    fetch("http://localhost:3000/services", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      "https://wild-photographer-server-shakheras-projects.vercel.app/services",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

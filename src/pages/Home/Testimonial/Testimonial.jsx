@@ -9,7 +9,9 @@ import "@smastrom/react-rating/style.css";
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/testimonial")
+    fetch(
+      "https://wild-photographer-server-shakheras-projects.vercel.app/testimonial"
+    )
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);
