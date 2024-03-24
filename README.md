@@ -11,5 +11,6 @@ Wild Photographer is a stunning web application built with React, Tailwind CSS, 
 - [MongoDB:] NoSQL database MongoDB is used for storing additional data and providing a scalable and flexible solution for data management.
 - [JWT Authentication:] Implement JSON Web Token (JWT) authentication to secure user authentication and authorization.
 
+#Live Link: https://wild-photographer-32aff.web.app/
 
 
