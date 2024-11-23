@@ -9,8 +9,9 @@ import Signup from "../pages/AccoutCreate/Signup/Signup";
 import PrivateRoute from "./PrivateRoute";
 import MyReview from "../pages/Service/MyReview/MyReview";
 import AddService from "../pages/Service/AddService/AddService";
-import Blog from "../pages/Blog/Blog";
+import Blog from "../pages/blog/blog";
 import UpdateReview from "../pages/Service/UpdateReview/UpdateReview";
+import Contact from "@/pages/contact/contact";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "auth/signin",
