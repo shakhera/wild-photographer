@@ -1,22 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {
-  ChevronDown,
-  UserIcon,
-  SearchIcon,
-  SunMoonIcon,
-  Moon,
-  Sun,
-  Phone,
-  AlignLeft,
-  ArrowDownCircle,
-  Lock,
-  RefreshCw,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -24,39 +11,75 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { AuthContext } from "@/provider/AuthProvider/AuthProvider";
 
 const mainNavMenuItems = [
   { title: "Home", href: "/" },
   {
-    title: "Shop",
-    href: "#",
+    title: "Services",
+
     subMenu: [
-      { title: "Shop", href: "/shop" },
-      { title: "All Products", href: "#" },
-      { title: "Categories", href: "#" },
+      {
+        title: "Services",
+        href: "/services",
+      },
+      {
+        title: "Gallery",
+        href: "/gallery",
+        subsubMenu: [
+          { title: "Nature", href: "/gallery/nature" },
+          { title: "Wildlife", href: "/gallery/wildlife" },
+        ],
+      },
+      {
+        title: "Packages",
+        href: "/packages",
+        subsubMenu: [
+          { title: "Basic Package", href: "/packages/basic" },
+          { title: "Premium Package", href: "/packages/premium" },
+        ],
+      },
+      { title: "Booking", href: "/booking" },
+      { title: "Categories", href: "/categories" },
     ],
   },
   {
     title: "Pages",
-    href: "#",
+    href: "/pages",
     subMenu: [
-      { title: "About Us", href: "#" },
-      { title: "FAQ", href: "#" },
+      { title: "About Us", href: "/aboutus" },
+      { title: "FAQ", href: "/faq" },
     ],
   },
-  { title: "Blog", href: "#" },
-  { title: "Contact", href: "#" },
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" },
 ];
-const authMenuItems = [
-  { title: "Sign In", href: "/signin" },
-  { title: "Sign Up", href: "/signup" },
+
+const authMenuItems = (user) => [
+  ...(user
+    ? [
+        {
+          title: "My Reviews",
+          href: "/myReviews",
+          subMenu: [
+            { title: "Pending Reviews", href: "/myReviews/pending" },
+            { title: "Completed Reviews", href: "/myReviews/completed" },
+          ],
+        },
+        {
+          title: "Add Photos",
+          href: "/addPhotos",
+        },
+        {
+          title: "Manage Bookings",
+          href: "/manageBookings",
+          subMenu: [
+            { title: "Upcoming Bookings", href: "/manageBookings/upcoming" },
+            { title: "Past Bookings", href: "/manageBookings/past" },
+          ],
+        },
+      ]
+    : []),
 ];
 
 const MainNav = () => {
@@ -64,7 +87,10 @@ const MainNav = () => {
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [navbarHeight, setNavbarHeight] = useState(0);
+  const { user, logOut } = useContext(AuthContext);
   const [activeMenuIndex, setActiveMenuIndex] = useState(null);
+  const [activeAuthMenuIndex, setActiveAuthMenuIndex] = useState(null);
+  const userMenuItems = authMenuItems(user);
 
   // Handle scroll event
   const handleScroll = () => {
@@ -86,6 +112,16 @@ const MainNav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        localStorage.removeItem("wild-photographer-access-token");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <section className="">
@@ -138,6 +174,108 @@ const MainNav = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
+
+                {/* <AnimatePresence>
+                  {activeMenuIndex === i && item.subMenu && (
+                    <motion.div
+                      className="absolute left-0 w-48 bg-white shadow-lg rounded z-50 origin-top"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      {item.subMenu.map((subItem) => (
+                        <div key={subItem.title} className="relative">
+                          <Link
+                            to={subItem.href}
+                            className="block px-4 py-2 text-black hover:bg-gray-100"
+                          >
+                            {subItem.title}
+                          </Link>
+                          {subItem.subsubMenu && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: 10 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="absolute left-48 w-48 bg-white shadow-lg rounded z-50"
+                            >
+                              {subItem.subsubMenu.map((subSubItem) => (
+                                <Link
+                                  key={subSubItem.title}
+                                  to={subSubItem.href}
+                                  className="block px-4 py-2 text-black hover:bg-gray-100"
+                                >
+                                  {subSubItem.title}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence> */}
+              </div>
+            ))}
+
+            {/* Authenticated User Menus */}
+            {userMenuItems.map((item, i) => (
+              <div
+                key={i}
+                className="relative"
+                onMouseEnter={() => setActiveAuthMenuIndex(i)}
+                onMouseLeave={() => setActiveAuthMenuIndex(null)}
+              >
+                <Link
+                  to={item.href}
+                  className="hover:text-red-500 px-2 rounded-md py-1 text-white flex items-center text-base font-bold uppercase"
+                >
+                  {item.title}
+                  {item.subMenu && <ChevronDown size={14} />}
+                </Link>
+                <AnimatePresence>
+                  {activeAuthMenuIndex === i && item.subMenu && (
+                    <motion.div
+                      className="absolute left-0 w-48 bg-white shadow-lg rounded z-50 origin-top"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      {item.subMenu.map((subItem) => (
+                        <div key={subItem.title} className="relative">
+                          <Link
+                            to={subItem.href}
+                            className="block px-4 py-2 text-black hover:bg-gray-100"
+                          >
+                            {subItem.title}
+                          </Link>
+                          {/* Subsubmenu */}
+                          {subItem.subsubMenu && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: 10 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="absolute left-48 w-48 bg-white shadow-lg rounded z-50"
+                            >
+                              {subItem.subsubMenu.map((subSubItem) => (
+                                <Link
+                                  key={subSubItem.title}
+                                  to={subSubItem.href}
+                                  className="block px-4 py-2 text-black hover:bg-gray-100"
+                                >
+                                  {subSubItem.title}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </nav>
@@ -174,7 +312,7 @@ const MainNav = () => {
                         <li key={subItem.title}>
                           <Link
                             to={subItem.href}
-                            className="block py-2  text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                            className="block py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                           >
                             {subItem.title}
                           </Link>
@@ -187,42 +325,49 @@ const MainNav = () => {
                 <Link
                   key={i}
                   to={item.href}
-                  className="block py-2  text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                  className="block py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   {item.title}
                 </Link>
               )
             )}
-          </Accordion>
 
-          {/*  User Links */}
-          <div className="flex flex-col items-center mt-8 space-y-4">
-            <div className="flex space-x-4 items-center">
-              {authMenuItems.map((item, i) =>
-                item.href === "/signin" ? (
-                  <Link
-                    to="/signin"
-                    className="flex items-center space-x-2 px-4 py-2"
-                    key={i}
-                  >
-                    <UserIcon size={24} />
-                    <div className="flex flex-col">
-                      <span className="text-sm">Hello</span>
-                      <span className="text-sm font-bold">Login</span>
-                    </div>
-                  </Link>
-                ) : (
-                  <Link
-                    key={i}
-                    to="/register"
-                    className="flex items-center space-x-2 px-4 py-2 h-10 bg-black text-white rounded-sm"
-                  >
-                    Signup
-                  </Link>
-                )
-              )}
-            </div>
-          </div>
+            {/* Authenticated User Menus */}
+            {userMenuItems.map((item, i) => (
+              <AccordionItem key={i} value={item.title}>
+                <AccordionTrigger className="py-2 text-lg font-medium w-full text-left flex justify-between">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent className="pl-4">
+                  <ul>
+                    {item.subMenu?.map((subItem) => (
+                      <li key={subItem.title}>
+                        <Link
+                          to={subItem.href}
+                          className="block py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                        >
+                          {subItem.title}
+                        </Link>
+                        {subItem.subsubMenu && (
+                          <div className="pl-4">
+                            {subItem.subsubMenu.map((subSubItem) => (
+                              <Link
+                                key={subSubItem.title}
+                                to={subSubItem.href}
+                                className="block py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                              >
+                                {subSubItem.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </>
       </motion.div>
     </section>

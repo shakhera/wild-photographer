@@ -16,7 +16,7 @@ import { Helmet } from "react-helmet-async";
 
 const Banner = () => {
   return (
-    <div>
+    <section className="container mx-auto">
       <Helmet>
         <title>Home | Wild Photographer</title>
       </Helmet>
@@ -47,7 +47,7 @@ const Banner = () => {
           <img src={banner6} alt="" className="object-cover w-full h-96" />
         </SwiperSlide>
       </Swiper>
-    </div>
+    </section>
   );
 };
 

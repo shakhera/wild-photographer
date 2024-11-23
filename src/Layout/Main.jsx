@@ -10,7 +10,7 @@ const Main = () => {
     <div>
       <UpperNavbar />
       <MainNav />
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Outlet></Outlet>
       <Footer></Footer>
     </div>
