@@ -81,7 +81,7 @@ const MyReview = () => {
               </tr>
             </thead>
             <tbody>
-              {reviews.map((review) => (
+              {reviews?.map((review) => (
                 <tr
                   key={review._id}
                   className="hover:bg-gray-50 transition duration-300"

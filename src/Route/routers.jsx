@@ -82,11 +82,11 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "signin",
+        path: "auth/signin",
         element: <Signin></Signin>,
       },
       {
-        path: "signup",
+        path: "auth/signup",
         element: <Signup></Signup>,
       },
     ],

@@ -61,7 +61,7 @@ const Navbar = () => {
         </>
       ) : (
         <li className="px-6 md:px-2 py-2 md:my-0 text-white hover:bg-sky-600 md:hover:bg-transparent">
-          <Link to="/signin">Signin</Link>
+          <Link to="auth/signin">Signin</Link>
         </li>
       )}
     </>
