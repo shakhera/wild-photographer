@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { AuthContext } from "../../../provider/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import SectionTitle from "@/components/common/SectionTitle";
+import { Button } from "@/components/ui/button";
 
 const Signin = () => {
   const { user, login } = useContext(AuthContext);
@@ -54,23 +56,29 @@ const Signin = () => {
   };
 
   return (
-    <div>
+    <section className="container mx-auto px-4 dark:bg-base-900 min-h-screen ">
       <Helmet>
         <title>SignIn | Wild Photographer</title>
       </Helmet>
-      <div className=" min-h-screen bg-base-200">
-        <div className="card shrink-0 md:w-1/3 mx-auto shadow-2xl bg-base-100">
-          <form onSubmit={handleSignin} className="card-body">
-            <h1 className="text-5xl font-bold">SignIn </h1>
+      <div className="">
+        <SectionTitle
+          heading="Sign In to Wild Photographer"
+          subHeading="Access your account to explore exclusive photo collections and services."
+        />
+
+        <div className="card shrink-0 md:w-1/3 mx-auto shadow-2xl bg-base-100 dark:bg-base-800">
+          <form onSubmit={handleSignin} className="card-body dark:bg-gray-600">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-gray-700 dark:text-gray-300">
+                  Email
+                </span>
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 required
               />
             </div>
@@ -82,19 +90,22 @@ const Signin = () => {
                 type="password"
                 name="password"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 required
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-neutral hover:bg-white hover:text-black">
+              <button className="btn btn-neutral hover:bg-white hover:text-black dark:hover:bg-gray-700 dark:hover:text-white">
                 SignIn
               </button>
             </div>
             <div>
               <p className="label">
                 Are you new? please
-                <Link to="/signup" className="text-blue-500 hover:underline">
+                <Link
+                  to="/auth/signup"
+                  className="text-blue-500 hover:underline"
+                >
                   Create an account
                 </Link>
               </p>
@@ -103,7 +114,7 @@ const Signin = () => {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

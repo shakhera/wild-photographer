@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { AuthContext } from "../../../provider/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import SectionTitle from "@/components/common/SectionTitle";
 
 const Signup = () => {
   const { createUser } = useContext(AuthContext);
@@ -27,15 +28,17 @@ const Signup = () => {
       });
   };
   return (
-    <div>
+    <section className="container mx-auto px-4 dark:bg-base-900 min-h-screen ">
       <Helmet>
         <title>SignUp | Wild Photographer</title>
       </Helmet>
-      <div className=" min-h-screen bg-base-200">
-        <div className="card shrink-0 md:w-1/3 mx-auto shadow-2xl bg-base-100">
-          <form onSubmit={handleSignup} className="card-body">
-            <h1 className="text-5xl font-bold">SignUp </h1>
-
+      <div className="">
+        <SectionTitle
+          heading="Sign Up to Wild Photographer"
+          subHeading="Access your account to explore exclusive photo collections and services."
+        />
+        <div className="card shrink-0 md:w-1/3 mx-auto shadow-2xl bg-base-100 dark:bg-base-800">
+          <form onSubmit={handleSignup} className="card-body dark:bg-gray-600">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -44,7 +47,7 @@ const Signup = () => {
                 type="text"
                 name="name"
                 placeholder="name"
-                className="input input-bordered"
+                className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 required
               />
             </div>
@@ -56,7 +59,7 @@ const Signup = () => {
                 type="email"
                 name="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 required
               />
             </div>
@@ -68,7 +71,7 @@ const Signup = () => {
                 type="password"
                 name="password"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 required
               />
             </div>
@@ -80,7 +83,10 @@ const Signup = () => {
             <div>
               <p className="label">
                 Already have an account?
-                <Link to="/signin" className="text-blue-500 hover:underline">
+                <Link
+                  to="/auth/signin"
+                  className="text-blue-500 hover:underline"
+                >
                   Signin
                 </Link>
               </p>
@@ -89,7 +95,7 @@ const Signup = () => {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
