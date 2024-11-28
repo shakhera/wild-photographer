@@ -54,7 +54,7 @@ const MyReview = () => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              const remaing = reviews.filter((review) => review._id !== id);
+              const remaing = reviews?.filter((review) => review._id !== id);
               setReviews(remaing);
             }
           })
@@ -66,8 +66,8 @@ const MyReview = () => {
   };
 
   return (
-    <div>
-      <div>
+    <>
+      <>
         <div className="overflow-x-auto ">
           <h2 className="text-3xl font-bold text-center mt-5">My Reviews</h2>
           <table className="max-w-[80%] shadow-md  border mx-auto border-gray-100  my-6">
@@ -116,8 +116,8 @@ const MyReview = () => {
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
+      </>
+    </>
   );
 };
 

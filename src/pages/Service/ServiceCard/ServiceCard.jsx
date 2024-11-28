@@ -17,17 +17,17 @@ const ServiceCard = ({ service }) => {
   const { name, image, rating, price, description, _id } = service;
   return (
     <>
-      <Card className="max-w-sm mx-auto shadow-md hover:shadow-lg transition-shadow duration-200">
+      <Card className=" max-w-sm mx-auto shadow-md hover:shadow-lg transition-shadow duration-200 h-full">
         <CardHeader className="p-0">
           <PhotoView src={image} className="">
             <img
               src={image}
               alt={name}
-              className="w-full h-48 mx-auto rounded-t-md "
+              className="w-full h-48 mx-auto rounded-t-md object-cover"
             />
           </PhotoView>
         </CardHeader>
-        <CardContent className="px-4">
+        <CardContent className="px-4 ">
           <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 w-64 truncate">
             {name}
           </h2>

@@ -64,7 +64,7 @@ const router = createBrowserRouter([
         path: "updateReview/:id",
         element: (
           <PrivateRoute>
-            <UpdateReview></UpdateReview>
+            <UpdateReview />
           </PrivateRoute>
         ),
         loader: ({ params }) =>

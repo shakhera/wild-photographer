@@ -120,7 +120,7 @@ const UpperNavbar = () => {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="link"
-                className="outline-none text-black hover:text-red-700 rounded-none shadow-current hover:shadow-none dark:text-white"
+                className="outline-none text-white hover:text-red-700 rounded-none shadow-current hover:shadow-none dark:text-white"
               >
                 {theme === "light" ? (
                   <SunMoonIcon className="w-6 h-6" />

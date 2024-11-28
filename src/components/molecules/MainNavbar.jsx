@@ -58,17 +58,21 @@ const mainNavMenuItems = [
 const authMenuItems = (user) => [
   ...(user
     ? [
+        // {
+        //   title: "My Reviews",
+        //   href: "/myReview",
+        //   subMenu: [
+        //     { title: "Pending Reviews", href: "/myReviews/pending" },
+        //     { title: "Completed Reviews", href: "/myReviews/completed" },
+        //   ],
+        // },
         {
-          title: "My Reviews",
-          href: "/myReviews",
-          subMenu: [
-            { title: "Pending Reviews", href: "/myReviews/pending" },
-            { title: "Completed Reviews", href: "/myReviews/completed" },
-          ],
+          title: "Add Service",
+          href: "/addService",
         },
         {
-          title: "Add Photos",
-          href: "/addService",
+          title: "My Reviews",
+          href: "/myReview",
         },
         {
           title: "Manage Bookings",
@@ -135,7 +139,9 @@ const MainNav = () => {
           className={`flex justify-between items-center w-full max-w-7xl mx-auto  `}
         >
           {/* LOGO  */}
-          <div className="text-xl font-bold">LOGO</div>
+          <Link to="/" className="text-xl font-bold uppercase">
+            wild-photographer
+          </Link>
 
           {/* nav menus */}
           <nav className="hidden md:flex space-x-4">

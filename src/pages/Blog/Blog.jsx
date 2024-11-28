@@ -39,7 +39,7 @@ const Blog = () => {
   ];
 
   return (
-    <section className="container mx-auto px-4 py-12 bg-gradient-to-r from-green-100 via-blue-100 to-pink-100">
+    <section className="container mx-auto px-4 py-12 ">
       <Helmet>
         <title>Blog | Wild Photographer</title>
       </Helmet>
@@ -60,7 +60,7 @@ const Blog = () => {
         {blogData.map((item, idx) => (
           <div
             key={idx}
-            className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden transition-all hover:scale-105"
+            className="max-w-sm mx-auto bg-white dark:bg-gray-800 dark:text-gray-300 rounded-lg shadow-lg overflow-hidden transition-all hover:scale-105"
           >
             <img
               src={item.image}
@@ -86,17 +86,17 @@ const Blog = () => {
       </div>
 
       {/* Accordion FAQ Section */}
-      <div className="mt-12 max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <div className="mt-12 max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg dark:bg-gray-800 dark:text-gray-300">
         <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6">
           Frequently Asked Questions
         </h3>
-        <Accordion type="single" collapsible>
+        <Accordion type="single" collapsible className="">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="py-4 px-6 bg-gray-100 text-lg text-gray-900 rounded-md font-medium flex justify-between items-center hover:bg-gray-200 transition-all">
-              <Camera className="w-6 h-6 text-gray-500" />
+            <AccordionTrigger className="py-4 px-6 bg-gray-100 text-lg text-gray-900 rounded-md font-medium flex justify-between items-center hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition-all">
+              <Camera className="w-6 h-6 text-gray-500 dark:text-gray-400" />
               What is the best camera for outdoor photography?
             </AccordionTrigger>
-            <AccordionContent className="px-6 py-4 text-gray-700 bg-gray-50 rounded-md mt-2">
+            <AccordionContent className="px-6 py-4 text-gray-700 bg-gray-50 rounded-md mt-2 dark:bg-gray-800 dark:text-gray-300">
               The best camera for outdoor photography depends on your needs. A
               DSLR or mirrorless camera with a weather-sealed body,
               high-resolution sensor, and fast autofocus is ideal for capturing
@@ -104,11 +104,11 @@ const Blog = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="py-4 px-6 bg-gray-100 text-lg text-gray-900 rounded-md font-medium flex justify-between items-center hover:bg-gray-200 transition-all">
-              <BookOpen className="w-6 h-6 text-gray-500" />
+            <AccordionTrigger className="py-4 px-6 bg-gray-100 text-lg text-gray-900 rounded-md font-medium flex justify-between items-center hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition-all">
+              <BookOpen className="w-6 h-6 text-gray-500 dark:text-gray-400" />
               How do I improve my photography composition?
             </AccordionTrigger>
-            <AccordionContent className="px-6 py-4 text-gray-700 bg-gray-50 rounded-md mt-2">
+            <AccordionContent className="px-6 py-4 text-gray-700 bg-gray-50 rounded-md mt-2 dark:bg-gray-800 dark:text-gray-300">
               Photography composition can be improved by following the rule of
               thirds, leading lines, and balancing elements within the frame.
               Experiment with different angles, framing, and perspectives.
