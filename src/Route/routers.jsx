@@ -12,10 +12,12 @@ import AddService from "../pages/Service/AddService/AddService";
 import Blog from "../pages/blog/blog";
 import UpdateReview from "../pages/Service/UpdateReview/UpdateReview";
 import Contact from "@/pages/contact/contact";
+import ErrorPage from "@/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     element: <Main></Main>,
     children: [
       {
