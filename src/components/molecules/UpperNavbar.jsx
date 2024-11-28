@@ -48,7 +48,7 @@ const UpperNavbar = () => {
   };
 
   return (
-    <motion.header className="h-[40px] w-full text-white bg-neutral-700 border-b border-[#495057] lg:px-2 ">
+    <motion.header className=" h-[40px] w-full text-white bg-neutral-700 border-b border-[#495057] lg:px-2 px-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className=" flex items-center space-x-1">
           <Phone size={15} />

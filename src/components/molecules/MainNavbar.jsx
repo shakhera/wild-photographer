@@ -68,7 +68,7 @@ const authMenuItems = (user) => [
         },
         {
           title: "Add Photos",
-          href: "/addPhotos",
+          href: "/addService",
         },
         {
           title: "Manage Bookings",
@@ -293,7 +293,9 @@ const MainNav = () => {
 
       {/* Full-Screen Mobile Drawer Menu */}
       <motion.div
-        className={`fixed top-0 left-0 h-full w-full bg-white dark:bg-gray-900 z-50 shadow-lg flex flex-col items-center p-12 lg:hidden `}
+        className={`fixed top-0 left-0 h-full bg-white dark:bg-gray-900 z-50 shadow-lg flex flex-col items-center p-12 lg:hidden ${
+          isMobileMenuOpen ? "w-[70%]" : "w-full"
+        }`}
         initial={{ x: "100%" }}
         animate={{ x: isMobileMenuOpen ? "0%" : "100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
