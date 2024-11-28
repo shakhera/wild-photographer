@@ -1,98 +1,46 @@
 import React from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import banner1 from "../../../assets/images/banner/1.jpg";
-import banner2 from "../../../assets/images/banner/2.jpg";
-import banner3 from "../../../assets/images/banner/3.avif";
-import banner4 from "../../../assets/images/banner/4.avif";
-import banner5 from "../../../assets/images/banner/5.jpg";
-import banner6 from "../../../assets/images/banner/6.jpg";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 import { Helmet } from "react-helmet-async";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { images } from "@/data/photos";
 
 const Banner1 = () => {
-  const images = [banner2, banner4, banner5, banner6];
-
-  const img = [
-    {
-      title: "",
-      img: "https://askproject.net/geowild/wp-content/uploads/sites/112/2022/11/mckenzie-toyne-YYFLSbM2FEo-unsplash.jpg",
-    },
-    {
-      title: "",
-      img: "https://askproject.net/geowild/wp-content/uploads/sites/112/2022/11/wildlife-WF9SS43.jpg",
-    },
-    {
-      title: "",
-      img: "https://askproject.net/geowild/wp-content/uploads/sites/112/2022/11/max-van-den-oetelaar-S0txA-JnUFA-unsplash.jpg",
-    },
-    {
-      title: "",
-      img: "https://askproject.net/geowild/wp-content/uploads/sites/112/2022/11/redcharlie-O7zkyNkQ1lM-unsplash.jpg",
-    },
-    {
-      title: "",
-      img: "https://askproject.net/geowild/wp-content/uploads/sites/112/2022/11/zdenek-machacek-2GAvdXQ6Xp8-unsplash.jpg",
-    },
-  ];
-
-  // Capture Every Moment In The Wild World
-
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
-
   return (
     <section className="container mx-auto">
       <Helmet>
         <title>Home | Wild Photographer</title>
       </Helmet>
-      <Carousel
-        className="w-full max-w-xs"
-        plugins={[plugin.current]}
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
-      >
-        <CarouselContent>
-          {img?.map((item, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
-                <img src={item.img} alt="" />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
 
-      {/* <Carousel
-        className="w-full max-w-xs"
-        plugins={[plugin.current]}
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
+      <Swiper
+        modules={[Pagination, Navigation, Autoplay]}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        loop={true}
+        className="w-full  h-[300px] lg:h-[500px] overflow-hidden"
       >
-        <CarouselContent>
-          {img?.map((item, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
-                <img src={item.img} alt="" />
+        {images.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="w-full h-[300px] lg:h-[500px] overflow-hidden">
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-full object-cover bg-black opacity-50 transition-transform duration-700 ease-in-out transform group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div className="absolute top-1/2 left-8 transform -translate-y-1/2 text-white w-[90%] lg:w-[45%]">
+                <h3 className="text-4xl md:text-6xl font-bold font-lacquer">
+                  {item.title}
+                </h3>
               </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel> */}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 };
